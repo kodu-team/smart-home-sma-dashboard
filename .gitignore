@@ -1,1 +1,5 @@
-PRD.md
+node_modules/
+dist/
+coverage/
+public/config.local.js
+.env
