@@ -41,6 +41,13 @@ export function validateSchedule(on, off) {
   return null;
 }
 
+export function lampTelemetryValid(payload) {
+  const config = payload?.lamp_config;
+  return ['ON', 'OFF'].includes(payload?.actuator?.lamp)
+    && (config?.mode === 0 || config?.mode === 1)
+    && validateSchedule(config.on, config.off) === null;
+}
+
 export function validateThreshold(value, hysteresis = 1) {
   const threshold = Number(value);
   if (!Number.isFinite(threshold) || threshold < 10 || threshold > 60) return 'Threshold harus 10–60 °C.';

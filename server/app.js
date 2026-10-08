@@ -30,15 +30,15 @@ export function validateCommand(command) {
   if (!command || typeof command !== 'object' || Array.isArray(command)) throw new Error('Command tidak valid.');
   if (typeof command.id !== 'string' || !command.id || command.id.length > 63) throw new Error('ID command tidak valid.');
   if (command.type !== 'config' && command.type !== 'control') throw new Error('Tipe command tidak valid.');
-  const allowed = command.type === 'config' ? ['id', 'type', 'lamp1', 'lamp2', 'blower'] : ['id', 'type', 'lamp1', 'lamp2', 'blower', 'door_lock'];
+  const allowed = command.type === 'config' ? ['id', 'type', 'lamp', 'blower'] : ['id', 'type', 'lamp', 'blower', 'door_lock'];
   if (Object.keys(command).some(key => !allowed.includes(key))) throw new Error('Field command tidak valid.');
   if (command.type === 'control') {
-    for (const key of ['lamp1', 'lamp2', 'blower']) {
+    for (const key of ['lamp', 'blower']) {
       if (command[key] != null && !['NONE', 'ON', 'OFF'].includes(command[key])) throw new Error(`${key} tidak valid.`);
     }
     if (command.door_lock != null && !['NONE', 'LOCK', 'UNLOCK'].includes(command.door_lock)) throw new Error('door_lock tidak valid.');
   } else {
-    for (const key of ['lamp1', 'lamp2', 'blower']) {
+    for (const key of ['lamp', 'blower']) {
       const value = command[key];
       if (value == null) continue;
       if (typeof value !== 'object' || Array.isArray(value)) throw new Error(`${key} tidak valid.`);

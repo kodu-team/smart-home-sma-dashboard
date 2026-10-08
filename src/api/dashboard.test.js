@@ -12,7 +12,7 @@ describe('API dashboard same-origin', () => {
 
   it('mengirim command ke proksi dan meneruskan error server', async () => {
     const fetchImpl = vi.fn(async () => ({ ok: true, json: async () => ({ id: 'abc' }) }));
-    const command = { id: 'abc', type: 'control', lamp1: 'ON' };
+    const command = { id: 'abc', type: 'control', lamp: 'ON' };
     expect(await createDashboardClient(fetchImpl).sendCommand(command)).toEqual({ id: 'abc' });
     expect(fetchImpl.mock.calls[0][0]).toBe('/api/commands');
     expect(JSON.parse(fetchImpl.mock.calls[0][1].body)).toEqual(command);

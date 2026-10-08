@@ -47,7 +47,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
 .section-heading h2{font:800 21px/1.2 'Plus Jakarta Sans',sans-serif;letter-spacing:-.04em;margin:0;color:#15233c}
 .section-heading .eyebrow{margin-bottom:6px}
 .section-side{display:flex;align-items:center;gap:8px;color:#8390a5;font-size:11px;font-weight:700}
-.metrics-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .metric-card{min-height:174px;padding:23px 25px;background:white;border:1px solid #e8edf4;border-radius:15px;box-shadow:0 7px 20px #19294908}
 .metric-top{display:flex;align-items:center;gap:11px}
 .metric-icon{width:35px;height:35px;display:grid;place-items:center;border-radius:9px}
@@ -56,15 +56,10 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
 .metric-value{margin:22px 0 3px;color:#18243b;font:800 35px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:-.055em}
 .metric-unit{font-size:16px;letter-spacing:0;margin-left:5px;color:#8290a6;font-weight:600}
 .metric-hint{font-size:11px;color:#9aa6b6}
-.contacts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
-.contact-card{display:flex;align-items:center;gap:14px;min-height:96px;padding:19px 23px;background:white;border:1px solid #e8edf4;border-radius:15px;box-shadow:0 7px 20px #19294908}
-.contact-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:11px;background:#eaf7f0;color:#37a572;flex:none}
-.contact-icon.open{background:#fff1e7;color:#e69250}
-.contact-copy{display:flex;flex-direction:column;gap:2px;min-width:0}.contact-label{font-size:11px;font-weight:700;color:#929eb0}.contact-copy strong{font:800 15px 'Plus Jakarta Sans',sans-serif}.contact-copy small{font-size:10px;color:#9aa5b5}
 .state-badge{display:inline-flex;align-items:center;gap:8px;border-radius:100px;padding:8px 12px;font-size:14px;font-weight:800;letter-spacing:.02em;white-space:nowrap;margin-left:auto}
 .state-badge .state-dot{width:9px;height:9px}
 .state-badge.positive{color:#168259;background:#e5f8ed}.state-badge.positive .state-dot{background:#27b578}.state-badge.warning{color:#b77a37;background:#fff2e3}.state-badge.warning .state-dot{background:#f0a257}.state-badge.neutral{color:#8794a7;background:#f0f2f6}.state-badge.neutral .state-dot{background:#a6b0be}
-.devices-block{margin-top:34px}.device-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.devices-block{margin-top:34px}.device-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .device-card{background:#fff;border:1px solid #e8edf4;border-radius:15px;padding:24px 25px 27px;min-height:290px;box-shadow:0 7px 20px #19294908}
 .device-heading{display:flex;align-items:center;flex-wrap:wrap;gap:13px}.device-icon{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:11px}.device-icon.lamp{color:#e4a52f;background:#fff5dc}.device-icon.blower{color:#318cbb;background:#e7f7fb}.device-icon.lock{color:#536dcc;background:#eaf0ff}
 .device-heading h3{font:800 15px/1.2 'Plus Jakarta Sans',sans-serif;margin:0 0 5px}.device-heading p{font-size:10px;color:#9ba7b5;margin:0}
@@ -77,7 +72,6 @@ select:focus,input:focus{border-color:#6296ec;background:white}
 .action-button:hover:not(:disabled){transform:translateY(-1px);border-color:#8fb7f5;color:#2269d0}.action-button.selected{color:#1762d1;background:#eaf2ff;border-color:#87b4fc}.action-button:disabled{opacity:.55}
 .time-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.time-grid label,.threshold-label{display:block;color:#8290a2;font-size:10px;font-weight:700}.time-grid input,.threshold-label input{margin-top:6px}
 .save-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:37px;width:100%;margin-top:12px;border:none;border-radius:8px;background:#286bd9;color:white;font-size:11px;font-weight:800;box-shadow:0 5px 11px #286bd92d}.save-button:hover:not(:disabled){background:#195dcb}
-.text-button{display:block;margin:12px auto 0;padding:4px;border:0;background:none;font-size:11px;font-weight:800}.text-button.danger{color:#d06054}.text-button:hover:not(:disabled){text-decoration:underline}
 .threshold-label{margin-bottom:11px}.rule-box{display:flex;gap:7px;flex-wrap:wrap}.rule-box span{display:inline-flex;align-items:center;gap:5px;padding:8px 9px;border-radius:7px;color:#647893;background:#f4f8fd;font-size:10px;font-weight:800}
 .card-note{color:#9aa6b5;font-size:11px;line-height:1.5;margin:15px 0 0}
 .field-error{color:#c34e4a;font-size:11px;margin:8px 0 0}
@@ -85,6 +79,11 @@ select:focus,input:focus{border-color:#6296ec;background:white}
 .spin{animation:spin 1.5s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
 .footer{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid #e2e8f0;padding:24px 0 34px;color:#9aa5b6;font-size:11px}.footer>div,.footer-system{display:flex;align-items:center;gap:20px}.footer-logo{display:inline-flex;align-items:center;gap:6px;color:#436cc7;font-weight:800;letter-spacing:.05em}.footer-system span+span:before{content:'·';margin-right:20px;color:#c5ccd7}
 .loading-page,.setup-page{min-height:100vh;display:grid;place-items:center;background:#f5f7fb;color:#61718d}.loading-page{display:flex;justify-content:center;gap:12px;font-size:14px;font-weight:700}.setup-card{width:min(540px,calc(100% - 32px));padding:38px;background:white;border-radius:19px;box-shadow:0 20px 70px #17264216;border:1px solid #e4eaf3}.setup-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:13px;color:#2d72df;background:#eaf2ff;margin-bottom:25px}.setup-card h1{font:800 27px/1.2 'Plus Jakarta Sans',sans-serif;letter-spacing:-.04em;color:#17233b;margin:0 0 10px}.setup-card p:not(.eyebrow){font-size:13px;line-height:1.6}.setup-card ol{margin:23px 0;padding-left:20px;color:#455571;font-size:12px;line-height:2}.setup-card code{background:#f0f4fa;border-radius:4px;padding:2px 4px;color:#285db8}.setup-error{color:#a34b3d;background:#fff0ec;padding:11px 14px;border-radius:8px;font-size:11px}
-@media(max-width:950px){.topbar-inner,.page-content{width:min(100% - 44px,1360px)}.hero{padding:34px}.hero-visual{right:-90px;opacity:.76}.hero>div:first-child{max-width:60%}.topbar-caption{display:none}.metric-card{padding:20px}.device-card{padding:21px}.contact-card{padding:17px}.contact-copy small{display:none}}
-@media(max-width:700px){.topbar{height:66px}.topbar-inner,.page-content{width:calc(100% - 30px)}.brand-name{font-size:14px}.brand-mark{width:36px;height:36px}.hero{height:auto;min-height:280px;padding:31px 24px;margin:18px 0 24px}.hero>div:first-child{max-width:100%}.hero-visual{opacity:.2;right:-150px}.hero h1{font-size:29px}.hero-description{max-width:340px}.metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.metric-card:last-child{grid-column:span 2}.metric-card{min-height:150px;padding:18px}.metric-value{font-size:29px}.contacts-grid{grid-template-columns:1fr;gap:12px;margin-top:12px}.contact-card{gap:9px}.device-grid{grid-template-columns:1fr;gap:12px}.section-side{display:none}.footer,.footer>div,.footer-system{align-items:flex-start;flex-direction:column;gap:8px}.footer-system span+span:before{display:none}}
-@media(max-width:430px){.connection-pill{font-size:10px;padding:7px 9px}.brand-name small{font-size:8px}.hero h1{font-size:26px}.last-update{font-size:10px}.metric-label{font-size:10px}.metric-value{font-size:25px}.metric-unit{font-size:13px}.metric-hint{font-size:10px}.contact-copy strong{font-size:13px}.contact-icon{width:35px;height:35px}.contact-card{padding:12px}.section-heading h2{font-size:19px}}
+@media(max-width:950px){.metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar-inner,.page-content{width:min(100% - 44px,1360px)}.hero{padding:34px}.hero-visual{right:-90px;opacity:.76}.hero>div:first-child{max-width:60%}.topbar-caption{display:none}.metric-card{padding:20px}.device-card{padding:21px}}
+@media(max-width:700px){.topbar{height:66px}.topbar-inner,.page-content{width:calc(100% - 30px)}.brand-name{font-size:14px}.brand-mark{width:36px;height:36px}.hero{height:auto;min-height:280px;padding:31px 24px;margin:18px 0 24px}.hero>div:first-child{max-width:100%}.hero-visual{opacity:.2;right:-150px}.hero h1{font-size:29px}.hero-description{max-width:340px}.metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.metric-card{min-height:150px;padding:18px}.metric-value{font-size:29px}.device-grid{grid-template-columns:1fr;gap:12px}.section-side{display:none}.footer,.footer>div,.footer-system{align-items:flex-start;flex-direction:column;gap:8px}.footer-system span+span:before{display:none}}
+@media(max-width:430px){.connection-pill{font-size:10px;padding:7px 9px}.brand-name small{font-size:8px}.hero h1{font-size:26px}.last-update{font-size:10px}.metric-label{font-size:10px}.metric-value{font-size:25px}.metric-unit{font-size:13px}.metric-hint{font-size:10px}.section-heading h2{font-size:19px}}
+
+@media(min-width:701px) and (max-width:950px){.device-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.device-grid>.device-card:last-child{grid-column:1 / -1}}
+
+.tone-green .metric-icon{color:#37a572;background:#eaf7f0}
+.contact-metric .metric-value{font-size:clamp(18px,3vw,28px)}

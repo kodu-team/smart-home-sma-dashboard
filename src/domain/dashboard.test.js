@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  commandResult, connectionStatus, makeCommand, parseAntaresTime,
+  commandResult, connectionStatus, lampTelemetryValid, makeCommand, parseAntaresTime,
   validateSchedule, validateThreshold,
 } from './dashboard.js';
 
@@ -25,8 +25,18 @@ describe('aturan dashboard', () => {
     expect(validateThreshold(33, 0)).toMatch(/Hysteresis/);
   });
 
+  it('memerlukan kontrak lampu baru yang lengkap sebelum kontrol aktif', () => {
+    const payload = { actuator: { lamp: 'OFF' }, lamp_config: { mode: 1, on: '18:00', off: '06:00' } };
+    expect(lampTelemetryValid(payload)).toBe(true);
+    expect(lampTelemetryValid({ actuator: { lamp1: 'OFF' }, lamp1_config: payload.lamp_config })).toBe(false);
+    expect(lampTelemetryValid({ ...payload, lamp_config: { ...payload.lamp_config, mode: '1' } })).toBe(false);
+    expect(lampTelemetryValid({ ...payload, actuator: { lamp: 'UNKNOWN' } })).toBe(false);
+    expect(lampTelemetryValid({ ...payload, lamp_config: { mode: 0 } })).toBe(false);
+    expect(lampTelemetryValid(undefined)).toBe(false);
+  });
+
   it('membuat command dan menunggu ID yang cocok sebelum mengakui hasil', () => {
-    expect(makeCommand('control', { lamp1: 'ON' }, 'abc')).toEqual({ id: 'abc', type: 'control', lamp1: 'ON' });
+    expect(makeCommand('control', { lamp: 'ON' }, 'abc')).toEqual({ id: 'abc', type: 'control', lamp: 'ON' });
     expect(() => makeCommand('control', {}, 'x'.repeat(64))).toThrow();
     const record = { payload: { system: { last_command_id: 'abc', last_command_result: 'applied' } } };
     expect(commandResult(record, 'other')).toBeNull();

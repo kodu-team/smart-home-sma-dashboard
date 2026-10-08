@@ -25,7 +25,7 @@ describe('Antares API', () => {
 
   it('menyimpan command sebagai string JSON di m2m:cin.con', async () => {
     const fetchImpl = vi.fn(async () => ({ ok: true }));
-    const command = { id: 'abc', type: 'control', lamp1: 'ON' };
+    const command = { id: 'abc', type: 'control', lamp: 'ON' };
     await createAntaresClient(config, fetchImpl).sendCommand(command);
     const [url, options] = fetchImpl.mock.calls[0];
     expect(url.endsWith('/smarthome-commands')).toBe(true);
