@@ -74,7 +74,7 @@ function LampCard({ status, config, send, disabled }) {
   }
 
   return <section className="device-card" aria-label="Lampu">
-    <div className="device-heading"><span className="device-icon lamp"><LampDesk size={22} /></span><div><h3>Lampu</h3><p>Relay · GPIO 17</p></div><StateBadge value={status} good="ON" labels={['ON', 'OFF']} /></div>
+    <div className="device-heading"><span className="device-icon lamp"><LampDesk size={22} /></span><div><h3>Lampu</h3><p>Relay · GPIO 16</p></div><StateBadge value={status} good="ON" labels={['ON', 'OFF']} /></div>
     <div className="card-divider" />
     <label className="field-label" htmlFor="lamp-mode">Mode operasi</label>
     <select id="lamp-mode" value={mode === 0 || mode === 1 ? mode : ''} disabled={disabled || mode == null} onChange={event => send('config', { [key]: { mode: Number(event.target.value) } }, 'Mode Lampu')}>
@@ -109,7 +109,7 @@ function BlowerCard({ status, config, send, disabled }) {
   }
 
   return <section className="device-card" aria-label="Blower">
-    <div className="device-heading"><span className="device-icon blower"><Fan size={22} /></span><div><h3>Blower</h3><p>Relay · GPIO 12</p></div><StateBadge value={status} good="ON" labels={['ON', 'OFF']} /></div>
+    <div className="device-heading"><span className="device-icon blower"><Fan size={22} /></span><div><h3>Blower</h3><p>Relay · GPIO 17</p></div><StateBadge value={status} good="ON" labels={['ON', 'OFF']} /></div>
     <div className="card-divider" />
     <label className="field-label" htmlFor="blower-mode">Mode operasi</label>
     <select id="blower-mode" value={mode === 0 || mode === 1 ? mode : ''} disabled={disabled || mode == null} onChange={event => send('config', { blower: { mode: Number(event.target.value) } }, 'Mode blower')}>

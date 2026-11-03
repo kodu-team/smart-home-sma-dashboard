@@ -38,7 +38,7 @@ describe('dashboard React', () => {
     expect(screen.getAllByRole('region', { name: /^Lampu/ })).toHaveLength(1);
     expect(screen.queryByText('Pintu', { exact: true })).toBeNull();
     expect(screen.getByText('Jendela', { exact: true })).toBeTruthy();
-    expect(screen.getByText('Relay · GPIO 17')).toBeTruthy();
+    expect(within(lamp).getByText('Relay · GPIO 16')).toBeTruthy();
   });
 
   it('mode jadwal dan suhu menyembunyikan kontrol manual', async () => {
